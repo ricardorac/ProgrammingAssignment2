@@ -1,8 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Following functions return inverse of a given invertible matrix. 
+## Matrix inverion is perfomred if cached inverted matrix is unavailable.
 
-## Write a short comment describing this function
-
+## Creates a list of functions with the given matrix and allows caching the
+## invert of this matrix.
 makeCacheMatrix <- function(x = matrix()) {
   slv <- NULL
   set <- function(y) {
@@ -20,7 +20,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This functions uses the return of makeCacheMatrix to calculate the inverse
+## of a matrix and cache the inverse for future use.
+## If the matirx is already solved and in the cache (parent environment),
+## the inverted matrix is assigned to a local variable that is used by cacheSolve function. 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
